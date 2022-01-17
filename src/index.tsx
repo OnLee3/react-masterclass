@@ -10,7 +10,7 @@ const queryClient = new QueryClient()
 ReactDOM.render(
   <React.StrictMode>
      <QueryClientProvider client={queryClient} >
-        <ThemeProvider theme={lightTheme}>
+        <ThemeProvider theme={theme}>
           <App />
         </ThemeProvider>
      </QueryClientProvider>

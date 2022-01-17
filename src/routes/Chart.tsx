@@ -41,7 +41,7 @@ function Chart({coinId}:ChartProps){
                 ]}
                 options={{
                     theme:{
-                        // mode: "dark"
+                        mode: "dark"
                     },
                         chart: {
                             type: 'candlestick',
