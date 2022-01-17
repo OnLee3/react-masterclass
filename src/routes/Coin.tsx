@@ -13,11 +13,19 @@ const Container = styled.div`
     margin: 0 auto;
 `;
 
+const GoBackButton = styled(Link)`
+    position: absolute;
+    left: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+`;
+
 const Header = styled.header`
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 `;
 
 const Title = styled.h1`
@@ -159,6 +167,9 @@ function Coin() {
             <title>{state?.name ? state.name : loading ? "Loading..." : infoData?.name}</title>
         </Helmet>
         <Header>
+            <GoBackButton to='/'>
+                &larr; Back
+            </GoBackButton>
             <Title>{state?.name ? state.name : loading ? "Loading..." : infoData?.name}</Title>
         </Header>
     {loading    
