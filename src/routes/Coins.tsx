@@ -20,8 +20,8 @@ const Header = styled.header`
 const CoinsList = styled.ul``;
 
 const Coin = styled.li`
-    background-color: white;
-    color: ${props => props.theme.bgColor};
+    background-color: ${props => props.theme.boxColor};
+    color: ${props => props.theme.textColor};
     font-size: 1.25rem;
     font-weight: 500;
 

@@ -35,13 +35,13 @@ function Chart({coinId}:ChartProps){
                         name: 'Price',
                         data: data?.map(price => ({
                                 x: price.time_close,
-                                y: [price.open.toFixed(2), price.high.toFixed(2), price.low.toFixed(2), price.close.toFixed(2)]
+                                y: [price.open.toFixed(3), price.high.toFixed(3), price.low.toFixed(3), price.close.toFixed(3)]
                         }))
                     },
                 ]}
                 options={{
                     theme:{
-                        mode: "dark"
+                        // mode: "dark"
                     },
                         chart: {
                             type: 'candlestick',
@@ -56,7 +56,14 @@ function Chart({coinId}:ChartProps){
                             align: 'left'
                           },
                           xaxis: {
+                            labels: {
+                                show: false
+                            },
+                            axisTicks: {
+                                show: false
+                            },
                             type: 'datetime',
+                            tickPlacement: 'on'
                           },
                           yaxis: {
                             tooltip: {
