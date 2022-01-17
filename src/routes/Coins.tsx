@@ -22,7 +22,7 @@ const CoinsList = styled.ul``;
 const Coin = styled.li`
     background-color: white;
     color: ${props => props.theme.bgColor};
-    font-size: 1.25em;
+    font-size: 1.25rem;
     font-weight: 500;
 
     margin-bottom : 0.75rem;
@@ -48,13 +48,13 @@ const Title = styled.h1`
 const Loader = styled.span`
     display: block;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 `;
 
 const Img = styled.img`
     width: 2em;
     height: 2em;
-    margin-right: 0.75em;
+    margin-right: 0.75rem;
 `;
 
 interface ICoin {

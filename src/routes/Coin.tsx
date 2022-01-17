@@ -16,7 +16,7 @@ const Container = styled.div`
 const GoBackButton = styled(Link)`
     position: absolute;
     left: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
 `;
 
@@ -217,10 +217,10 @@ function Coin() {
 
             <Switch>
                 <Route path={`/:coinId/price`}>
-                    <Price />
+                    <Price priceData={tickersData?.quotes.USD}/>
                 </Route>
                 <Route path={`/:coinId/chart`}>
-                    <Chart coinId={coinId }/>
+                    <Chart coinId={coinId}/>
                 </Route>
             </Switch>
         </>
