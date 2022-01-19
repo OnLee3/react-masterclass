@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-interface PriceProps {
+interface IPriceProps {
     priceData: {
         ath_date: string;
         ath_price: number;
@@ -35,63 +35,68 @@ const OverviewNumber = styled.span<{isGreen: boolean}>`
     color: ${props => props.isGreen ? '#4cd137' : '#e84118'}
 `;
 
-function Price({priceData}: any ){
-    return (
-        <PriceWrapper>
-            <Overview>
+function Price({priceData}: IPriceProps ){
+        return (
+            <PriceWrapper>
+            { priceData ?
+            <>
+                <Overview>
                 <span>15분</span>
                 <OverviewNumber isGreen={priceData.percent_change_15m > 0}>
                     {priceData.percent_change_15m}
                 </OverviewNumber>
-            </Overview>
-            <Overview>
-                <span>30분</span>
-                <OverviewNumber isGreen={priceData.percent_change_30m > 0}>
-                    {priceData.percent_change_30m}
-                </OverviewNumber>
-            </Overview>
-            <Overview>
-                <span>1시간</span>
-                <OverviewNumber isGreen={priceData.percent_change_1h > 0}>
-                    {priceData.percent_change_1h}
-                </OverviewNumber >
-            </Overview>
-            <Overview>
-                <span>6시간</span>
-                <OverviewNumber isGreen={priceData.percent_change_6h > 0}>
-                    {priceData.percent_change_6h}
-                </OverviewNumber>
-            </Overview>
-            <Overview>
-                <span>12시간</span>
-                <OverviewNumber isGreen={priceData.percent_change_12h > 0}>
-                    {priceData.percent_change_12h}
-                </OverviewNumber >
-            </Overview>
-            <Overview>
-                <span>1일</span>
-                <OverviewNumber isGreen={priceData.percent_change_24h > 0}>
-                    {priceData.percent_change_24h}
-                </OverviewNumber>
-            </Overview>
-            <Overview>
-                <span>7일</span>
-                <OverviewNumber isGreen={priceData.percent_change_7d > 0}>
-                    {priceData.percent_change_7d}
-                </OverviewNumber>
-            </Overview>
-            <Overview>
-                <span>1개월</span>
-                <OverviewNumber isGreen={priceData.percent_change_30d > 0}>
-                    {priceData.percent_change_30d}
-                </OverviewNumber>
-            </Overview>
-            <Overview>
-                <span>1년</span>
-                <OverviewNumber isGreen={priceData.percent_change_1y > 0}>
-                    {priceData.percent_change_1y}
-                </OverviewNumber>
-            </Overview>
+                </Overview>
+                <Overview>
+                    <span>30분</span>
+                    <OverviewNumber isGreen={priceData.percent_change_30m > 0}>
+                        {priceData.percent_change_30m}
+                    </OverviewNumber>
+                </Overview>
+                <Overview>
+                    <span>1시간</span>
+                    <OverviewNumber isGreen={priceData.percent_change_1h > 0}>
+                        {priceData.percent_change_1h}
+                    </OverviewNumber >
+                </Overview>
+                <Overview>
+                    <span>6시간</span>
+                    <OverviewNumber isGreen={priceData.percent_change_6h > 0}>
+                        {priceData.percent_change_6h}
+                    </OverviewNumber>
+                </Overview>
+                <Overview>
+                    <span>12시간</span>
+                    <OverviewNumber isGreen={priceData.percent_change_12h > 0}>
+                        {priceData.percent_change_12h}
+                    </OverviewNumber >
+                </Overview>
+                <Overview>
+                    <span>1일</span>
+                    <OverviewNumber isGreen={priceData.percent_change_24h > 0}>
+                        {priceData.percent_change_24h}
+                    </OverviewNumber>
+                </Overview>
+                <Overview>
+                    <span>7일</span>
+                    <OverviewNumber isGreen={priceData.percent_change_7d > 0}>
+                        {priceData.percent_change_7d}
+                    </OverviewNumber>
+                </Overview>
+                <Overview>
+                    <span>1개월</span>
+                    <OverviewNumber isGreen={priceData.percent_change_30d > 0}>
+                        {priceData.percent_change_30d}
+                    </OverviewNumber>
+                </Overview>
+                <Overview>
+                    <span>1년</span>
+                    <OverviewNumber isGreen={priceData.percent_change_1y > 0}>
+                        {priceData.percent_change_1y}
+                    </OverviewNumber>
+                </Overview>
+            </>
+                : ""
+            }
         </PriceWrapper>
     )
 }
