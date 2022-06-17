@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import ToDoList from "./ToDoList";
+import ToDoList from "./components/ToDoList";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
@@ -51,22 +51,22 @@ table {
 }
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color:${props => props.theme.bgColor};
-  color:${props => props.theme.textColor};
+  background-color:${(props) => props.theme.bgColor};
+  color:${(props) => props.theme.textColor};
 }
 a {
   text-decoration:none;
   color: inherit;
 }
-`
+`;
 
 function App() {
   return (
-	  <>
-      	<GlobalStyle />
-		<ToDoList />
-	  </>
-  )
+    <>
+      <GlobalStyle />
+      <ToDoList />
+    </>
+  );
 }
 
 export default App;
